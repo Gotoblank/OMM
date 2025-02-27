@@ -1,0 +1,31 @@
+{
+    "questionDetails": {
+        "title": "",
+        "questionText": "",
+        "tags": [
+            ""
+        ],
+        "ID": "",
+        "questionVersion": 1,
+        "imagePath": null
+    },
+    "answers": {
+        "answerOneText": "",
+        "answerTwoText": "",
+        "answerThreeText": null,
+        "answerFourText": null,
+        "answerFiveText": null,
+        "isCorrect": [
+            false,
+            true,
+            null,
+            null,
+            null
+        ]
+    },
+    "statistics": {
+        "totalTimesAnswered": 0,
+        "totalTimesAnsweredCorrect": 0,
+        "totalTimeSpentOnQuestion": 0
+    }
+}
