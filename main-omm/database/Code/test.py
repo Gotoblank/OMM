@@ -77,7 +77,10 @@ editJsonFile.editJsonQuestion(
                         True,
                         None,
                         False,
-                        [False, True, False, False, None],
+                        [False, True, False, False, None]
+                        )
+
+editJsonFile.editJsonQuestionStatistics(
                         2,
                         1,
                         10

@@ -1,0 +1,31 @@
+{
+    "questionDetails": {
+        "title": "Test Question",
+        "questionText": "True or False: Is Water Wet?",
+        "tags": [
+            "The Truth"
+        ],
+        "ID": "SZQOPSPU9Z",
+        "questionVersion": 1,
+        "imagePath": null
+    },
+    "answers": {
+        "answerOneText": "True",
+        "answerTwoText": "False",
+        "answerThreeText": null,
+        "answerFourText": null,
+        "answerFiveText": null,
+        "isCorrect": [
+            false,
+            true,
+            null,
+            null,
+            null
+        ]
+    },
+    "statistics": {
+        "totalTimesAnswered": 0,
+        "totalTimesAnsweredCorrect": 0,
+        "totalTimeSpentOnQuestion": 0
+    }
+}

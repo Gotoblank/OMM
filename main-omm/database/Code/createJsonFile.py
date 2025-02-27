@@ -31,7 +31,7 @@ def createFile(data, folderPath, fileName): #Creating actual .json file
 
 def createAccountJson(email, password, firstName, lastName, accountType):
 
-    path = Path('C:/Users/ponzo/OneDrive/Desktop/Code/accounts') #Should be filepath to where accounts are stored
+    path = Path('main-omm/database/Code/accounts') #Should be filepath to where accounts are stored
     fileName = generateRandomFileName(10, path, False) #creates filename
     ID = fileName[:-5] #creates ID based on substring of filename (removes .json)
 
@@ -60,7 +60,7 @@ def createAccountJson(email, password, firstName, lastName, accountType):
 
 def createQuestionJson(title, questionText, tags, imagePath, answer1, answer2, answer3, answer4, answer5, isCorrect1, isCorrect2, isCorrect3, isCorrect4, isCorrect5):
 
-    path = Path('C:/Users/ponzo/OneDrive/Desktop/Code/questions') #Should be filepath to where questions are stored
+    path = Path('main-omm/database/Code/questions') #Should be filepath to where questions are stored
     fileName = generateRandomFileName(10, path, True) #creates filename
     ID = fileName[:-7] #creates ID based on substring of filename (removes .json)
 
