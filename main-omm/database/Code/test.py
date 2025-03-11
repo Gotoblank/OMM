@@ -11,24 +11,6 @@ createJsonFile.createAccountJson(
                         3
                         )
 
-
-createJsonFile.createQuestionJson(
-                        "Simple Math", #title
-                        "What is 2+2", #question text
-                        ["Math", "Simple", "Test Tag"], #tags
-                        None, #image path (if exists)
-                        "3", #answer text 1
-                        "22", #answer text 2
-                        "4", #answer text 3
-                        "15", #answer text 4
-                        "2", #answer text 5
-                        False, #is answer 1 correct
-                        False, #is answer 2 correct
-                        True, #is answer 3 correct
-                        False, #is answer 4 correct
-                        False, #is answer 5 correct
-                        )
-
 createJsonFile.createQuestionJson(
                         "Test Question", #title
                         "True or False: Is Water Wet?", #question text

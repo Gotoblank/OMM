@@ -12,17 +12,12 @@
 
 
 from flask import Flask, render_template, request, redirect, url_for, session,  flash, jsonify
-from routes.signup import signUpUser
-from config.config import config
 import os
 import datetime 
 from database import get_attempts, get_question, is_question_active
+from config import config
 from models import answer, question
-from routes.login import userLogin
-from routes.search_question import searchQuestions
-from routes.add_question import addQuestionToDB
-from routes.edit_question import editQuestionByID
-from routes.submit_data import submit
+from routes import signUpUser, userLogin, searchQuestions, addQuestionToDB, editQuestionByID, submit
 from scripts.create_test import create
 import database.connection as dc
 
