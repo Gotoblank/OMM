@@ -1,0 +1,16 @@
+{
+    "accountDetails": {
+        "email": "test@gmail.com",
+        "password": "password",
+        "firstName": "testing",
+        "lastName": "testerton",
+        "accountType": 3,
+        "ID": "ZY7YS1TO63"
+    },
+    "statistics": {
+        "totalQuestionsAnswered": 0,
+        "totalQuestionsCorrect": 0,
+        "totalTestsCompleted": 0,
+        "averageScore": 0
+    }
+}
