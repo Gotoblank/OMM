@@ -11,24 +11,6 @@ createJsonFile.createAccountJson(
                         3
                         )
 
-
-createJsonFile.createQuestionJson(
-                        "Simple Math", #title
-                        "What is 2+2", #question text
-                        ["Math", "Simple", "Test Tag"], #tags
-                        None, #image path (if exists)
-                        "3", #answer text 1
-                        "22", #answer text 2
-                        "4", #answer text 3
-                        "15", #answer text 4
-                        "2", #answer text 5
-                        False, #is answer 1 correct
-                        False, #is answer 2 correct
-                        True, #is answer 3 correct
-                        False, #is answer 4 correct
-                        False, #is answer 5 correct
-                        )
-
 createJsonFile.createQuestionJson(
                         "Test Question", #title
                         "True or False: Is Water Wet?", #question text
@@ -47,8 +29,8 @@ createJsonFile.createQuestionJson(
                         )
 
 editJsonFile.editJsonAccountDetails(
-                        "N8JWPZAO83",
-                        "TestingEmail@gmail.com",
+                        "YTJZ4L1OQ3",
+                        "NewTestingEmail@gmail.com",
                         "newTestPassword",
                         "new First Name",
                         "Last Name Test",
@@ -56,14 +38,14 @@ editJsonFile.editJsonAccountDetails(
                         )
 
 editJsonFile.editJsonAccountStatistics(
-                        "N8JWPZAO83",
+                        "YTJZ4L1OQ3",
                         5,
                         3,
                         2,
                         80)
 
 editJsonFile.editJsonQuestion(
-                        "P5H7RX1JNP",
+                        "4RRB9BFVLS",
                         None,
                         "What is 6 + 4?",
                         None,
@@ -81,6 +63,7 @@ editJsonFile.editJsonQuestion(
                         )
 
 editJsonFile.editJsonQuestionStatistics(
+                        "4RRB9BFVLS",
                         2,
                         1,
                         10

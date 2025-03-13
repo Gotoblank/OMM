@@ -31,11 +31,12 @@ def editJsonAccountDetails(fileName, newEmail, newPassword, newFirstName, newLas
     filePath = Path('main-omm/database/Code/accounts')
     fileName = filePath / f"{fileName}.json"
 
-    if not os.path.exists(filePath / fileName):
+
+    if not os.path.exists(fileName):
         print("File does not exist")
     else:
 
-        with open(filePath / fileName, 'r') as f:
+        with open(fileName, 'r') as f:
             data = json.load(f)
             if newEmail != None:
                 data['accountDetails']['email'] = newEmail  #Set new email if needed
@@ -48,18 +49,18 @@ def editJsonAccountDetails(fileName, newEmail, newPassword, newFirstName, newLas
             if newAccountType != None:
                 data['accountDetails']['accountType'] = newAccountType  #Set new account type if needed
 
-        with open(filePath / fileName, 'w') as f:
+        with open(fileName, 'w') as f:
             json.dump(data, f, indent=4)  #Save the updated data back to the file
 
 def editJsonAccountStatistics(fileName, newTotalQuestionsAnswered, newTotalQuestionsCorrect, newTotalTestsCompleted, newAverageScore):
     filePath = Path('main-omm/database/Code/accounts')
     fileName = filePath / f"{fileName}.json"
 
-    if not os.path.exists(filePath / fileName):
+    if not os.path.exists(fileName):
         print("File does not exist")
 
     else:
-        with open(filePath / fileName, 'r') as f:
+        with open(fileName, 'r') as f:
             data = json.load(f)
             if newTotalQuestionsAnswered != None:
                 data['statistics']['totalQuestionsAnswered'] = newTotalQuestionsAnswered  #Set new amount of questions answered
@@ -70,7 +71,7 @@ def editJsonAccountStatistics(fileName, newTotalQuestionsAnswered, newTotalQuest
             if newAverageScore != None:
                 data['statistics']['averageScore'] = newAverageScore  #Update average score
 
-        with open(filePath / fileName, 'w') as f:
+        with open(fileName, 'w') as f:
             json.dump(data, f, indent=4)  # Save the updated data back to the file
 
 def editJsonQuestion(fileName, newTitle, newQuestionText, newTags, newImagePath, allowImagePath, newAnswerOneText, newAnswerTwoText, newAnswerThreeText, allowAnswerThree, newAnswerFourText, allowAnswerFour, newAnswerFiveText, allowAnswerFive, newIsCorrect):
@@ -135,7 +136,7 @@ def editJsonQuestion(fileName, newTitle, newQuestionText, newTags, newImagePath,
         with open(filePath / newFileName, 'w') as f:
             json.dump(data, f, indent=4)  # Save the updated data back to the file
 
-def editJsonQuestionStatistics(newTotalTimesAnswered, newTotalTimesAnsweredCorrect, newTotalTimeSpentOnQuestion):
+def editJsonQuestionStatistics(fileName, newTotalTimesAnswered, newTotalTimesAnsweredCorrect, newTotalTimeSpentOnQuestion):
 
     filePath = Path('main-omm/database/Code/questions')
     baseFile = filePath / f"{fileName}-1.json"
@@ -156,5 +157,5 @@ def editJsonQuestionStatistics(newTotalTimesAnswered, newTotalTimesAnsweredCorre
             if newTotalTimeSpentOnQuestion != None:
                 data['statistics']['totalTimeSpentOnQuestion'] = newTotalTimeSpentOnQuestion  #Update total time spent on question
 
-        with open(filePath / newFileName, 'w') as f:
+        with open(filePath / fileName, 'w') as f:
             json.dump(data, f, indent=4)  # Save the updated data back to the file
