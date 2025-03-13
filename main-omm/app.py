@@ -7,16 +7,15 @@
 #   3.) Connects to a database to retreive and store questions, answers, and test results
 #   4.) Users can sign up, login, create and edit questions, search for questions, take tests, and view their test history and statistics
 #   5.) Provides various routes for rendering different pages, processing form submissions, and managing user sessions
-#   6.) Includes functionality for viewing past test attempts, submitting test data, and error handling
+#   6.) Includes functionality for viSewing past test attempts, submitting test data, and error handling
 # Last edited: 02/06/2025 
 
-
-from flask import Flask, render_template, request, redirect, url_for, session,  flash, jsonify
+from flask import Flask, abort, render_template, request, redirect, url_for, session, flash, jsonify
 import os
 import datetime 
-from database import get_attempts, get_question, is_question_active
+from database import getquestionfromdatabase, getAttempts, getAnswer, getTest, is_active
 from config import config
-from models import answer, question
+from models import Answer, Question
 from routes import signUpUser, userLogin, searchQuestions, addQuestionToDB, editQuestionByID, submit
 from scripts.create_test import create
 import database.connection as dc
@@ -32,7 +31,7 @@ UPLOAD_FOLDER = config.upload_folder
 # A test route for us to to test certain things.
 @app.route('/success', methods = ['GET', 'POST'])
 def success():
-    return render_template('success_page.html', question = get_question.getquestionfromdatabase(38, UPLOAD_FOLDER), user_state = session.get('user_state'))
+    return render_template('success_page.html', question = getquestionfromdatabase(38, UPLOAD_FOLDER), user_state = session.get('user_state'))
 
 @app.route('/signup', methods = ['GET', 'POST'])
 def signup():
@@ -76,7 +75,7 @@ def addQuestion():
 @app.route('/editQuestion.html', methods=['GET', 'POST'])
 def editQuestion(id):
     #Redirect user to an editable question, only active questions are editable.
-    if (is_question_active.is_active(id)):
+    if (is_active(id)):
         return editQuestionByID(id, UPLOAD_FOLDER)
     
     return render_template("404.html", msg = "Question does not exist", user_state = session.get('user_state'))
@@ -196,7 +195,7 @@ def viewAttempt(test_id, attempt_num):
 @app.route('/success_page.html')
 def success_page():
     question_id = session.get('edited_question_id')
-    question = get_question.getquestionfromdatabase(question_id, UPLOAD_FOLDER)
+    question = getquestionfromdatabase(question_id, UPLOAD_FOLDER)
     
     return render_template('success_page.html', question = question, user_state = session.get('user_state'))
 
@@ -208,7 +207,7 @@ def viewTests():
     user_id = session.get('users_id')
     cnx = dc.makeConnection()
 
-    attempts = get_attempts.getAttempts(cnx, user_id)
+    attempts = getAttempts(cnx, user_id)
     
     return render_template('viewTests.html', attempts = attempts, user_state = session.get('user_state'))
 
